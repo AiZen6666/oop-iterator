@@ -2,7 +2,7 @@
 #include <vector>
 #include <string>
 
-// Класс "Киберспортивная команда"
+// ГЉГ«Г Г±Г± "ГЉГЁГЎГҐГ°Г±ГЇГ®Г°ГІГЁГўГ­Г Гї ГЄГ®Г¬Г Г­Г¤Г "
 class CyberTeam {
 public:
     CyberTeam(std::string name, std::string game)
@@ -12,14 +12,14 @@ public:
     std::string getGame() const { return m_game; }
 
 private:
-    std::string m_name; // Название команды
-    std::string m_game; // Название игры
+    std::string m_name; // ГЌГ Г§ГўГ Г­ГЁГҐ ГЄГ®Г¬Г Г­Г¤Г»
+    std::string m_game; // ГЌГ Г§ГўГ Г­ГЁГҐ ГЁГЈГ°Г»
 };
 
-// Шаблонный контейнер "Киберспортивные команды"
+// ГГ ГЎГ«Г®Г­Г­Г»Г© ГЄГ®Г­ГІГҐГ©Г­ГҐГ° "ГЉГЁГЎГҐГ°Г±ГЇГ®Г°ГІГЁГўГ­Г»ГҐ ГЄГ®Г¬Г Г­Г¤Г»"
 template <typename T>
 class CyberTeamContainer {
-    // LegacyIterator требует использования типов-членов класса
+    // LegacyIterator ГІГ°ГҐГЎГіГҐГІ ГЁГ±ГЇГ®Г«ГјГ§Г®ГўГ Г­ГЁГї ГІГЁГЇГ®Гў-Г·Г«ГҐГ­Г®Гў ГЄГ«Г Г±Г±Г 
 public:
     using value_type = T;
     using iterator = typename std::vector<T>::iterator;
@@ -28,13 +28,13 @@ public:
 
     CyberTeamContainer() = default;
 
-    // Добавление команды в контейнер
+    // Г„Г®ГЎГ ГўГ«ГҐГ­ГЁГҐ ГЄГ®Г¬Г Г­Г¤Г» Гў ГЄГ®Г­ГІГҐГ©Г­ГҐГ°
     void addTeam(T team) { m_teams.push_back(std::move(team)); }
 
-    // Возвращает количество команд в контейнере
+    // Г‚Г®Г§ГўГ°Г Г№Г ГҐГІ ГЄГ®Г«ГЁГ·ГҐГ±ГІГўГ® ГЄГ®Г¬Г Г­Г¤ Гў ГЄГ®Г­ГІГҐГ©Г­ГҐГ°ГҐ
     size_type size() const { return m_teams.size(); }
 
-    // Итераторы должны указывать на элементы контейнера
+    // Г€ГІГҐГ°Г ГІГ®Г°Г» Г¤Г®Г«Г¦Г­Г» ГіГЄГ Г§Г»ГўГ ГІГј Г­Г  ГЅГ«ГҐГ¬ГҐГ­ГІГ» ГЄГ®Г­ГІГҐГ©Г­ГҐГ°Г 
     iterator begin() { return m_teams.begin(); }
     iterator end() { return m_teams.end(); }
     const_iterator begin() const { return m_teams.begin(); }
@@ -49,7 +49,7 @@ int main() {
     container.addTeam(CyberTeam("Astralis", "CS:GO"));
     container.addTeam(CyberTeam("Natus Vincere", "DOTA 2"));
 
-    // Использование итератора для обхода контейнера
+    // Г€Г±ГЇГ®Г«ГјГ§Г®ГўГ Г­ГЁГҐ ГЁГІГҐГ°Г ГІГ®Г°Г  Г¤Г«Гї Г®ГЎГµГ®Г¤Г  ГЄГ®Г­ГІГҐГ©Г­ГҐГ°Г 
     for (const auto& team : container) {
         std::cout << "Team: " << team.getName() << ", Game: " << team.getGame() << "\n";
     }
